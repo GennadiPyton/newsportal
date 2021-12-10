@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 06 2021 г., 18:00
+-- Время создания: Дек 10 2021 г., 17:31
 -- Версия сервера: 10.4.18-MariaDB
 -- Версия PHP: 7.4.18
 
@@ -111,7 +111,7 @@ CREATE TABLE `table` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_estonian_ci NOT NULL,
+  `username` varchar(255) NOT NULL,
   `picture` blob NOT NULL,
   `job` varchar(100) CHARACTER SET utf8 COLLATE utf8_estonian_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_estonian_ci NOT NULL,
@@ -127,9 +127,10 @@ CREATE TABLE `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `picture`, `job`, `email`, `telefon`, `login`, `password`, `status`, `registration_date`, `pass`) VALUES
-(1, 'Admin', '', 'Portal admin', 'admin@newsportal.ee', '+3725645487', 'admin', '$2y$12$pxB2ofiiNZkxObmbBvBOyegwCjHCVFYhapjiSsdYXUaJ9Z1IH6pQW', 'admin', '2021-12-10', '123456'),
-(2, 'Anonim', '', 'Portal anonim', 'user@newsportal.ee', '+3725645487', 'anonim', '$2y$10$dYK1sCogKL/zZBef.V/gBeynL5mdt0QxZlwvEUBkS0jkdXYRMPHRa', 'user', '2021-12-31', '111111');
+INSERT INTO `users` (`id`, `username`, `picture`, `job`, `email`, `telefon`, `login`, `password`, `status`, `registration_date`, `pass`) VALUES
+(1, '', '', 'Portal admin', 'admin@newsportal.ee', '+3725645487', 'admin', '$2y$12$pxB2ofiiNZkxObmbBvBOyegwCjHCVFYhapjiSsdYXUaJ9Z1IH6pQW', 'admin', '2021-12-10', '123456'),
+(2, '', '', 'Portal anonim', 'user@newsportal.ee', '+3725645487', 'anonim', '$2y$10$dYK1sCogKL/zZBef.V/gBeynL5mdt0QxZlwvEUBkS0jkdXYRMPHRa', 'user', '2021-12-31', '111111'),
+(3, 'gena', '', '', 'gena@newsportal.ee', '', '', '$2y$10$kz1ETZaL7J.4DN0EwQeicuKluVPASvo5jWYn8p/0AowS75Q7E/ooe', 'user', '2021-12-10', '123456');
 
 --
 -- Индексы сохранённых таблиц
@@ -201,7 +202,7 @@ ALTER TABLE `table`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
