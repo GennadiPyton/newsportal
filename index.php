@@ -1,17 +1,12 @@
 <?php
+
 session_start();
+//session_destroy();
+require_once('../inc/Database.php'); //База данных
+include_once("modelAdmin/modelAdmin.php");
+include_once("controllerAdmin/controllerAdmin.php");
 
-include_once 'inc/Database.php';
-require 'model/Category.php';
-require 'model/News.php';
-require 'model/Comments.php';
-require 'model/Register.php';
+include_once("routeAdmin/routingAdmin.php");
 
-include_once 'view/news.php';
-include_once 'view/comments.php';
-
-include_once 'controller/Controller.php';
-include_once 'route/routing.php';
 
 echo $response;
-?>
